@@ -1,0 +1,4 @@
+pyfatfs
+pyobjc-framework-DiskArbitration
+pyobjc-framework-CoreFoundation
+binwalk
