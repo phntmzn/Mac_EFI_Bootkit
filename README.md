@@ -1,3 +1,12 @@
+# 🧬 mac_efi_bootkit
+
+An educational EFI bootkit project for macOS that demonstrates the construction, deployment, and testing of UEFI shellcode. The toolkit includes:
+
+- 🧱 A shellcode builder (`builder.py`)
+- 🗂 A FAT32 EFI System Partition injector (`injector.py`)
+- 💾 Tools to extract and inspect ESP contents
+- 🔬 Unit tests and safety guidelines
+
 ⚠️ **WARNING: This is for educational use only on authorized systems. Misuse may cause irreversible damage.**
 
 ---
@@ -17,7 +26,8 @@ mac_efi_bootkit/
 ├── tools/
 │   ├── nasm_compile.py     # Assembles efi_payload.asm
 │   ├── esp_extractor.py    # Mounts and copies ESP to folder
-│   └── device_info.py      # Lists EFI volumes and partitions
+│   ├── device_info.py      # Lists EFI volumes and partitions
+│   └── firmware_injector.py # Firmware DXE injection & SPI flash automation
 │
 ├── scripts/
 │   ├── build_bootkit.sh    # Automates build + injection
@@ -90,4 +100,8 @@ pytest tests/
 
 ## ⚠️ Disclaimer
 
-Use only in controlled environments. The authors are not responsible for damage or data loss. Review [docs/safety_guidelines.md](docs/safety_guidelines.md) before using.
+This toolkit includes low-level firmware interaction tools that can irreversibly alter your hardware. It is for academic use **only** on test machines or virtual environments.
+
+Do not attempt real-world deployment without full understanding of UEFI internals, SPI flash layout, and platform-specific protections.
+
+The authors are not responsible for damage, data loss, or unintended behavior caused by use or misuse. See [docs/safety_guidelines.md](docs/safety_guidelines.md).
